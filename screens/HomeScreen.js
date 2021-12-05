@@ -10,6 +10,8 @@ import NavFavourites from '../components/NavFavourites';
 
 
 const HomeScreen = () => {
+    console.log('HOMESCREEN');
+
     
     const dispatch = useDispatch()
     return (

@@ -10,13 +10,7 @@ const data = [
         icon:"home",
         location:"Home",
         destination:"Trilok Apartments, Sumeru",
-    },
-    {
-        id:"456",
-        icon:"briefcase",
-        location:"work",
-        destination:"Jaisuketu Flats, Navrangpura",
-    },
+    }
 ];
 
 const NavFavourites = () => {

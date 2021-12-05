@@ -32,7 +32,7 @@ import MapScreen from './screens/MapScreen';
 export default function App() {
   
   const stack = createStackNavigator()
-  console.log('BBBBBBBBBBBBBBBBBBBBBB', Platform)
+  console.log('APP')
 
   return (
     <Provider store={store}>

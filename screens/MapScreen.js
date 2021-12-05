@@ -9,7 +9,7 @@ import RideOptionsCard from '../components/RideOptionsCard';
 
 const MapScreen = () => {
     const stack = createStackNavigator();
-    console.log('33333333333333333333333333')
+    console.log('MAPSCREEN')
 
     return (
         <View>
