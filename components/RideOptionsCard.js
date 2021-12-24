@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements'
 import { useSelector } from 'react-redux';
 import tw from 'tailwind-react-native-classnames'
 import { selectTraveltimeInformation } from '../slices/navSlice';
+import 'intl';
+import 'intl/locale-data/jsonp/en';
 
 
 const data = [
@@ -27,9 +29,9 @@ const data = [
     },
 ];
 
+const SURGE_CHARGE_RATE = 1.5;
 
 const RideOptionsCard = () => {
-    console.log('YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
     const [selected, setSelected] = useState(null);
     const traveltimeInformation = useSelector(selectTraveltimeInformation)
 
@@ -59,11 +61,15 @@ const RideOptionsCard = () => {
                         {title}
                     </Text>
                     <Text>
-                        Travel Time...
+                        {traveltimeInformation?.duration?.text}
                     </Text>
                     </View>
                     <Text style={tw`font-semibold`}>
-                        $99
+                        {new Intl.NumberFormat('en-gb', {
+                            style:'currency',
+                            currency:'INR'
+                        }).format((traveltimeInformation?.duration?.value*multiplier)/10)
+                        }
                     </Text>
                 </TouchableOpacity>
             )}}

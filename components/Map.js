@@ -24,13 +24,11 @@ const Map = () => {
     },[origin, destination])
 
     useEffect(() => {
-      console.log('ZZZZZZZZZZZZZZZZZZZZZZZZZZzz')
       if (!origin || !destination) return;
 
       const getTravelTime = async () => {
         const response = await fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperials&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_MAPS_APIKEY}`)
         const json_data = await response.json();
-        console.log('111111111111111111111', json_data.rows[0].elements[0])
         dispatch(settraveltimeInformation(json_data.rows[0].elements[0]))
     }
 
